@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block body %}
+<!--
+<div class="block1">
+<h1>Hello {{name}}!</h1>
+</div>
+-->
+<!--
+<script type="text/javascript">
+    function readURL(){
+      var fullPath = document.getElementById('txnFile').value;
+      if (fullPath) {
+          var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+          var filename = fullPath.substring(startIndex);
+          if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+              filename = filename.substring(1);
+          }
+         document.getElementById("txnFile").value = filename;
+      }
+    }
+</script>
+-->
+<div class="block1">
+    <h1>Fusion Fraud Finder (FFF) App</h1>        
+    <form action = "/dlcheckFraud" method="POST" enctype="multipart/form-data" >
+        <ul class="form-style-1">
+            <li>
+                <label>Select Input Option...</label>
+                    <select name="inputOption" id=="inputOption" class="field-select">
+                        <option value="none"></option>
+                        <option value="TxnAsImport">Importing a File</option>
+                        <option value="txnAsText">Transaction as Text</option>
+                    </select>
+            </li>
+            <!--<li>
+                <label>Email <span class="required">*</span></label>
+                <input type="email" name="field3" class="field-long" />
+            </li>-->
+            <li>
+                <label>Import File <span class="required">*</span></label>
+                <input type="file" name="txnFile" id="txnFile" class="field-long" accept=".csv, .txt"/>
+            </li>
+            <li>
+                {{ table_html | safe }}
+            </li>
+            <li>
+                <!--<input type="submit" value="Submit" />-->
+                <button name="Submit" id="btnCheckFraud" type="Submit">Submit</button>
+                <!--button name="Submit" id="btnUpload" type="Submit">Upload</button -->
+            </li>
+        </ul>
+        </form>
+</div>
+
+
+
+{% endblock %}

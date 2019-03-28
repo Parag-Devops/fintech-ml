@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="block1">
+<h1>Fusion Fraud Finder (FFF) App</h1>        
+ <p>
+     <li>{{msg}}</li>
+    <li>
+        {{ table_html | safe }}
+    </li>
+</p>
+</div>
+
+{% endblock %}

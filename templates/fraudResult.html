@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block body %}
+ 
+<div class="block1">
+<h2>Payment Predictions</h2>
+  <p>
+    {% if prediction>0 %}
+    <h1>This transaction is Suspicious !!</h1>
+    {% else %}
+    <h1>This is a legitimate transaction !!</h1>
+    {% endif %}
+    <!-- <li>
+      <h3>(Brier Score)Accuracy Score : {{ score | safe }} </h3>
+    </li>     -->
+  </p>
+</div>
+{% endblock %}
